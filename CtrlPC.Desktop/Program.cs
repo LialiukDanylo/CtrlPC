@@ -1,15 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using CtrlPC.Desktop.Commands;
+using CtrlPC.Desktop.Networking;
 
 namespace CtrlPC.Desktop
 {
-    internal class Program
+    class Program
     {
-        static void Main()
+        static async Task Main()
         {
+            // Register available command handlers
+            var handlers = new List<ICommandHandler>
+            {
+                new PingCommand(),
+                new SleepCommand(),
+                new ShutdownCommand(),
+                new RestartCommand()
+            };
+
+            // Start listening for UDP commands
+            var listener = new UdpListener(handlers);
+            await listener.StartAsync();
         }
     }
 }
