@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using CtrlPC.Desktop.Commands;
 using CtrlPC.Desktop.Networking;
+using CtrlPC.Desktop.Services;
 
 namespace CtrlPC.Desktop
 {
@@ -9,6 +10,9 @@ namespace CtrlPC.Desktop
     {
         static async Task Main()
         {
+            // Register app in startup
+            StartupService.EnsureRegistered();
+
             // Register available command handlers
             var handlers = new List<ICommandHandler>
             {

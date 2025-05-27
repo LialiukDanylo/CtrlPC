@@ -7,7 +7,7 @@
     <ProjectGuid>{E9517F7B-C7E3-4752-93DD-3A246B0C589A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CtrlPC.Desktop</RootNamespace>
-    <AssemblyName>CtrlPC.Desktop</AssemblyName>
+    <AssemblyName>CtrlPC</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,7 @@
     <Compile Include="Networking\UdpListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\StartupService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
