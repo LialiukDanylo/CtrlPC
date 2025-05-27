@@ -2,5 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CtrlPC.Mobile.MainPage">
+    <StackLayout Background="{StaticResource Gray900}">
+        <Grid Margin="10">
+            <Label Text="Available Devices"
+                   FontSize="Large"
+                   HorizontalOptions="Start"
+                   Margin="0,5,0,0" 
+                   TextColor="White"/>
 
+            <Button Text="↻"
+                    FontSize="Large"
+                    Clicked="OnScanButtonClicked"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start" 
+                    Padding="0,0,0,5"/>
+        </Grid>
+
+        <ListView x:Name="IpListView"
+                  Margin="0,10,0,10"
+                  SeparatorColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding IpAddress}"
+                               FontSize="Medium"
+                               TextColor="White"
+                               Padding="10,0,0,0"
+                               VerticalOptions="Center"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Border Stroke="{DynamicResource Gray500}"
+                StrokeThickness="1"
+
+                BackgroundColor="#FF121212"
+                Margin="0,0,0,10"
+                HeightRequest="30"
+                Padding="0">
+            <Grid>
+                <Label x:Name="DebugLabel"
+                       FontSize="14"
+                       TextColor="LightGray"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Fill"
+                       Margin="10,0,0,2" />
+            </Grid>
+        </Border>
+
+        <Button Text="Sleep"
+                FontSize="18"
+                Clicked="OnSleepClicked"
+                HeightRequest="60"
+                Margin="10,0,10,10" />
+        <Button Text="Shutdown"
+                FontSize="18"
+                Clicked="OnShutdownClicked"
+                HeightRequest="60"
+                Margin="10,0,10,10" />
+        <Button Text="Restart"
+                FontSize="18"
+                Clicked="OnRestartClicked"
+                HeightRequest="60"
+                Margin="10,0,10,10" />
+
+    </StackLayout>
 </ContentPage>
